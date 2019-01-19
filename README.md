@@ -26,8 +26,8 @@ CTR 预估无论是在学术界还是在工业界都是一个很热的话题，�
 - C14-C21 -- anonymized categorical variables
 
 ## 数据预处理
-- 首先执行 ./data/analyse.ipynb 对数据进行简要的分析，可以发现所有特征都是非连续型特征，并且存在样本不均衡的问题。
-- 删掉 id 列和日期两列，生成 ./data/train_drop_id_hour.csv 和 ./data/test_drop_id_hour.csv 两个文件。
+- 首先执行 ./data/analyse.ipynb 对数据进行简要的分析，可以发现所有特征都是非连续型特征，并且存在样本不均衡的问题。之后删掉了 id 列和日期两列，生成 ./data/train_drop_id_hour.csv 和 ./data/test_drop_id_hour.csv 两个文件。
 - 执行 my_preprocess.py 生成各种模型的输入文件。
-
+- 训练 FFM 模型
+- 训练 GBDT 模型
 
