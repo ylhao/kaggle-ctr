@@ -1,0 +1,12 @@
+['First check if the text file has already been converted to binary format (6.1 seconds)\n', 
+'Binary file found. Skip converting text to binary\n', 
+'First check if the text file has already been converted to binary format (0.7 seconds)\n', 
+'Binary file found. Skip converting text to binary\n', 
+'iter   tr_logloss   va_logloss      tr_time\n', 
+'   1      0.39272      0.39254        164.1\n', 
+'   2      0.38925      0.39089        328.0\n', 
+'   3      0.38817      0.39020        492.2\n', 
+'   4      0.38743      0.38916        659.4\n', 
+'   5      0.38690      0.39146\n', 
+'Auto-stop. Use model at 4th iteration.\n']
+
