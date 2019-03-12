@@ -22,7 +22,7 @@ class CategoryDictGenerator:
         self.dicts = []
         self.num_feature = num_feature
         for i in range(0, num_feature):
-            # class collections.defaultdict([default_factory[, ...]])，将 default_factory 设置成 int 使 defaultdict 对于计数非常有用 
+            # class collections.defaultdict([default_factory[, ...]])，将 default_factory 设置成 int 使 defaultdict 对于计数非常有用
             self.dicts.append(collections.defaultdict(int))
 
 
@@ -45,7 +45,7 @@ class CategoryDictGenerator:
                 for i in range(0, self.num_feature):
                     if features[categorial_features[i]] != '':
                         self.dicts[i][features[categorial_features[i]]] += 1
-        
+
         for i in range(0, self.num_feature):
             # filter() 函数用于过滤序列，过滤掉不符合条件的元素，返回由符合条件元素组成的新列表。
             self.dicts[i] = filter(lambda x: x[1] >= cutoff, self.dicts[i].items())
@@ -115,7 +115,7 @@ def preprocess(datadir, outdir, train_data_file, test_data_file, sep=','):
     train_txt = open(os.path.join(outdir, 'train.txt'), 'w')
     valid_txt = open(os.path.join(outdir, 'valid.txt'), 'w')
 
-    start = time.time()      
+    start = time.time()
     with open(os.path.join(datadir, train_data_file), 'r') as f:
         for line_num, line in enumerate(f):
             if line_num % 100000 == 0:
@@ -159,7 +159,7 @@ def preprocess(datadir, outdir, train_data_file, test_data_file, sep=','):
                 # valid_lgb
                 valid_lgb.write('\t'.join(label) + '\t')
                 valid_lgb.write('\t'.join(categorial_lgb_vals) + '\n')
-    
+
     train_txt.close()
     valid_txt.close()
     train_ffm.close()
@@ -194,7 +194,7 @@ def preprocess(datadir, outdir, train_data_file, test_data_file, sep=','):
             test_ffm.write('\t'.join(['{}:{}:1'.format(ii, str(np.int32(val))) for ii, val in enumerate(categorial_vals.split(','))]) + '\n')
             # test_lgb
             test_lgb.write('\t'.join(categorial_lgb_vals) + '\n')
-    
+
     test_txt.close()
     test_ffm.close()
     test_lgb.close()
